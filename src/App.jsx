@@ -19,7 +19,7 @@ function App() {
 
     httpConfig(
       {
-        id: items.length ? Number(items[items.length-1] + 1) : 1,
+        id: items.length ? Number(items[items.length - 1].id + 1) : 1,
         name,
         comment,
       },
@@ -38,22 +38,22 @@ function App() {
         setComment={setComment}
         handleSubmit={handleSubmit}
       />
-        {items.length ? (
-          <div className="container-comments">
-            {items.map((item) => (
-              <div className="comment" key={item.id}>
-                <p>
-                  <span>Autor</span>: {item.name}
-                </p>
-                <p>
-                  <span>Comentário</span>: {item.comment}
-                </p>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p>Sem comentários</p>
-        )}
+      {items.length ? (
+        <div className="container-comments">
+          {items.map((item) => (
+            <div className="comment" key={item.id}>
+              <p>
+                <span>Autor</span>: {item.name}
+              </p>
+              <p>
+                <span>Comentário</span>: {item.comment}
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p>Sem comentários</p>
+      )}
     </div>
   );
 }
